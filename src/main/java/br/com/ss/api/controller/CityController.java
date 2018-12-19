@@ -61,4 +61,16 @@ public class CityController {
 		return ResponseEntity.status(HttpStatus.OK).body(citiesNames);
 	}
 
+	@RequestMapping(method = RequestMethod.GET, params = "quantidade-registros")
+	public ResponseEntity<Integer> getRegisterQuantity() {
+		return ResponseEntity.status(HttpStatus.OK).body(cityService.getRegisterQuantity());
+	}
+
+	@RequestMapping(params = { "coluna", "valor" }, method = RequestMethod.GET)
+	public ResponseEntity<List<CityDTO>> filterCitiesByCol(@RequestParam String coluna,
+			@RequestParam String valor) {
+		List<CityDTO> cities = cityService.filterCitiesByCol(coluna, valor);
+		return ResponseEntity.status(HttpStatus.OK).body(cities);
+	}
+
 }

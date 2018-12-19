@@ -67,4 +67,36 @@ public class ReadCSV {
 			}
 		}
 	}
+	
+	public static Integer getRegisterQuantity() {
+		 
+		BufferedReader fileReader = null;
+		Integer qtd = 0;
+ 
+		try {
+			fileReader = new BufferedReader(new FileReader("cidades.csv"));
+ 
+			// Read CSV header
+			fileReader.readLine();
+ 
+			// Read customer data line by line
+			while (fileReader.readLine() != null) {
+				qtd++;
+			}
+ 
+			return qtd;
+ 
+		} catch (Exception e) {
+			System.out.println("Reading CSV Error!");
+			e.printStackTrace();
+			return 0;
+		} finally {
+			try {
+				fileReader.close();
+			} catch (IOException e) {
+				System.out.println("Closing fileReader Error!");
+				e.printStackTrace();
+			}
+		}
+	}
 }
