@@ -52,10 +52,6 @@ public class ReadCSV {
 				}
 			}
  
-			for (CityDTO city : cities) {
-				System.out.println(city);
-			}
-			
 			return cities;
  
 		} catch (Exception e) {
