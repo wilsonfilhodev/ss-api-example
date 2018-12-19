@@ -42,16 +42,13 @@ public class WriteCSV {
 				fileWriter.append('\n');
 			}
  
-			System.out.println("Write CSV successfully!");
 		} catch (Exception e) {
-			System.out.println("Writing CSV error!");
 			e.printStackTrace();
 		} finally {
 			try {
 				fileWriter.flush();
 				fileWriter.close();
 			} catch (IOException e) {
-				System.out.println("Flushing/closing error!");
 				e.printStackTrace();
 			}
 		}
