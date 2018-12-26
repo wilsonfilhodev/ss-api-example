@@ -28,7 +28,7 @@
  mvn spring-boot:run
  ```
 
- 3. URL application:
+ 2. URL application:
  ```bash
  http://localhost:8080/cidades
  ```
